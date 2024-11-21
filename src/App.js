@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React, { useState } from "react"
 import './App.css';
+import Button from './component/Button';
+
+
+
+
 
 function App() {
+
+const [clickedButton, setClickedButton] = useState(null)
+
+const handleClick =  (buttonId) => {
+   setClickedButton(buttonId);
+}
+
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='app-container'>
+        <h1>TODO App</h1>
+          <div className='button-container'>
+             <Button color="#8888b9" label="Todo" onClick={() => {handleClick("button1")}}  isClicked={clickedButton === "button1"} isDisabled={false} />
+             <Button color="#8888b9" label="Todo list" onClick={() => {handleClick("button2")}}  isClicked={clickedButton === "button2"} isDisabled={false}/>
+          </div>
+      </div>
     </div>
   );
 }
 
 export default App;
+    
+     
