@@ -1,11 +1,6 @@
-
 import React from "react"
 
-const Button = ({ color, label, onClick, isClicked, isDisabled}) => {
-   
-
-    
-
+const Button = ({ color='#8888b9', label, onClick, isClicked=false, isDisabled=false}) => {
     return (
         <button 
             style={{ backgroundColor: isClicked ? "#3558b9": color }} 
@@ -17,5 +12,6 @@ const Button = ({ color, label, onClick, isClicked, isDisabled}) => {
     )
 }
 
-export default Button;
- 
+export default Button
+   
+
