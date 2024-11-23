@@ -2,49 +2,48 @@
     import Button from './Button'
     
     const ToDoForm = ({onAddTodo}) => {
-
-
-        const [TaskName, setTodoText] = useState('');
-        const [TaskStatus, setTodoStatus]=useState('todo');
-
+        const [taskName, setTodoText] = useState('');
+        const [taskStatus, setTodoStatus]=useState('todo');
         const maxlength = 25;
 
          const handleSubmit = (e) => {
             e.preventDefault();
             if(TaskName.trim()) {
-                onAddTodo({text:TaskName, status:TaskStatus});
-                setTodoText('')
-                setTodoStatus('Todo')
-            }
-         }
+                onAddTodo({text:taskName, status:taskStatus});
+                setTodoText('');
+                setTodoStatus('Todo');
+            };
+         };
         
         const handleInputChange = (e) =>{
-           setTodoText(e.target.value)
-        }
+           setTodoText(e.target.value);
+        };
 
         const handleStatusChange = (e) => {
-          setTodoStatus (e.target.value)
-        }
+          setTodoStatus (e.target.value);
+        };
 
         const isButtonDisabled = TaskName.trim() === '';
+        const taskStatuses = ['Todo', 'In-Progress', 'Completed'];
 
         return ( 
-        <form className='ToDoForm' onSubmit={handleSubmit}>  
+        <form className='todo-form' onSubmit={handleSubmit}>  
              <label htmlFor='taskname'>Enter to do:</label>        
-             <input className='TodoInput' type='text' placeholder='Enter to do' value={TaskName} onChange={handleInputChange} maxLength={maxlength}></input>
-              <div className="userStatus">
+             <input className='todo-input' type='text' placeholder='Enter to do' value={taskName} onChange={handleInputChange} maxLength={maxlength}></input>
+              <div className="user-status">
                   <label htmlFor='userstatus'>Todo Status:</label>
-                  <select value={TaskStatus} onChange={handleStatusChange}>
-                     <option value="Todo">Todo</option>
-                     <option value="In-Progress">In-Progress</option>
-                     <option value="Completed">Completed</option>
+                  <select value={taskStatus} onChange={handleStatusChange}>
+                  {taskStatuses.map((status) => (
+                          <option key={status} value={status}>
+                              {status}
+                          </option>
+                   ))}
                   </select>
               </div>
-            <Button color='#8888b9' label='Create To Do' onClick={handleSubmit} isClicked={false} isDisabled={isButtonDisabled} />
+            <Button color='#8888b9' label='Create To Do' onClick={handleSubmit} isDisabled={isButtonDisabled} />
         </form>
-        )
-    }
-
-export default ToDoForm                                
+        );
+    };
+export default ToDoForm;                               
           
                                              
