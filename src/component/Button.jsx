@@ -19,6 +19,4 @@ const Button = ({ color='#8888b9', label, onClick, isClicked=false, isDisabled=f
     )
 }
 
-export default Button
-   
-
+export default Button;
