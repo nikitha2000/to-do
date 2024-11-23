@@ -15,6 +15,9 @@ const layoutToggleButtonClick =  (buttonID) => {
     setTodo([...todos, newTodo]);
 };
   
+  const isTodoButtonClicked = clickedButton == 'todoButton';
+  const isTodoListButtonClicked = clickedButton == 'todoListButton';
+  
  return (
       <div className="App">
         <div className='app-container'>
