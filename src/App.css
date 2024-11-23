@@ -73,10 +73,6 @@ li {
   font-size: 1.1em; 
 }
 
-ul{
-  padding-left:0;
-}
-
 .x-todo {
   align-self: left;
   justify-content: center;
@@ -92,6 +88,7 @@ ul {
   margin:0 auto 10px auto;
   align-self: center;
   margin-top: 10px;
+  padding-left:0;
 }
 
 .todo {

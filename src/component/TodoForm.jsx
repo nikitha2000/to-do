@@ -2,29 +2,27 @@
     import Button from './Button';
     
     const ToDoForm = ({onAddTodo}) => {
+
         const [taskName, setTodoText] = useState('');
         const [taskStatus, setTodoStatus]=useState('Todo');
-
         const maxlength = 25;
 
-         const handleSubmit = (e) => {
+        const handleSubmit = (e) => {
             e.preventDefault();
             if(taskName.trim()) {
                 onAddTodo({text:taskName, status:taskStatus});
                 setTodoText('');
                 setTodoStatus('Todo');
-            }
+            };
          };
         
         const handleInputChange = (e) =>{
-           setTodoText(e.target.value)
+           setTodoText(e.target.value);
         };
 
         const handleStatusChange = (e) => {
-          setTodoStatus (e.target.value)
+          setTodoStatus (e.target.value);
         };
-
-        const isButtonDisabled = taskName.trim() === '';
 
         const taskStatuses = ['Todo', 'In-Progress', 'Completed'];
 
@@ -42,9 +40,9 @@
                    ))}
                   </select>
               </div>
-            <Button color='#8888b9' label='Create To Do' onClick={handleSubmit}  isDisabled={isButtonDisabled} />
+            <Button color='#8888b9' label='Create To Do' onClick={handleSubmit}  isDisabled={taskName.trim() === ''} />
         </form>
-        )
+        );
     };
-
+                                                                                          
 export default ToDoForm ;                                                                        
