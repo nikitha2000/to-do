@@ -2,6 +2,7 @@
     import Button from './Button'
     
     const ToDoForm = ({onAddTodo}) => {
+        
         const [taskName, setTodoText] = useState('');
         const [taskStatus, setTodoStatus]=useState('todo');
         const maxlength = 25;
@@ -43,6 +44,4 @@
         </form>
         );
     };
-export default ToDoForm;                               
-          
-                                             
+export default ToDoForm; 
