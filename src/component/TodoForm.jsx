@@ -23,7 +23,6 @@
           setTodoStatus (e.target.value);
         };
 
-        const isButtonDisabled = TaskName.trim() === '';
         const taskStatuses = ['Todo', 'In-Progress', 'Completed'];
 
         return ( 
@@ -40,7 +39,7 @@
                    ))}
                   </select>
               </div>
-            <Button color='#8888b9' label='Create To Do' onClick={handleSubmit} isDisabled={isButtonDisabled} />
+            <Button color='#8888b9' label='Create To Do' onClick={handleSubmit} isDisabled={taskName.trim() === ''} />
         </form>
         );
     };
