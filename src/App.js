@@ -36,8 +36,4 @@ const layoutToggleButtonClick =  (buttonID) => {
 };
 export default App;
 
-
-                 
-    
-
      
