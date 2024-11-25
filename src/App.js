@@ -5,7 +5,7 @@ import ToDoForm from "./component/TodoForm";
 
 function App() {
   const [clickedButton, setClickedButton] = useState(false);
-  const[todos, setTodo] = useState([]);
+  const [todos, setTodo] = useState([]);
  
 const layoutToggleButtonClick =  (buttonID) => {
     setClickedButton(buttonID);
@@ -33,7 +33,7 @@ const layoutToggleButtonClick =  (buttonID) => {
         </div>
       </div>
     );
+            
 };
-export default App;
 
-     
+export default App;
