@@ -40,7 +40,7 @@
                    ))}
                   </select>
               </div>
-            <Button color='#8888b9' label='Create To Do' onClick={handleSubmit} isDisabled={taskName.trim() === ''} />
+            <Button color='#8888b9' label='Create To Do' onClick={handleSubmit} isDisabled={!taskName.trim() === ''} />
         </form>
         );
     };
