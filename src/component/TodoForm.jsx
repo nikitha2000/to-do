@@ -9,18 +9,18 @@
 
          const handleSubmit = (e) => {
             e.preventDefault();
-            if(TaskName.trim()) {
+            if(taskName) {
                 onAddTodo({text:taskName, status:taskStatus});
                 setTodoText('');
                 setTodoStatus('Todo');
             };
          };
         
-        const handleInputChange = (e) =>{
-           setTodoText(e.target.value);
+        const handleTodoInputChange = (e) =>{
+           setTodoText(e.target.value.trim());
         };
 
-        const handleStatusChange = (e) => {
+        const handleTodoStatusChange = (e) => {
           setTodoStatus (e.target.value);
         };
 
@@ -29,10 +29,10 @@
         return ( 
         <form className='todo-form' onSubmit={handleSubmit}>  
              <label htmlFor='taskname'>Enter to do:</label>        
-             <input className='todo-input' type='text' placeholder='Enter to do' value={taskName} onChange={handleInputChange} maxLength={maxlength}></input>
+             <input className='todo-input' type='text' placeholder='Enter to do' value={taskName} onChange={handleTodoInputChange} maxLength={maxlength}></input>
               <div className="user-status">
                   <label htmlFor='userstatus'>Todo Status:</label>
-                  <select value={taskStatus} onChange={handleStatusChange}>
+                  <select value={taskStatus} onChange={handleTodoStatusChange}>
                   {taskStatuses.map((status) => (
                           <option key={status} value={status}>
                               {status}
@@ -40,7 +40,7 @@
                    ))}
                   </select>
               </div>
-            <Button color='#8888b9' label='Create To Do' onClick={handleSubmit} isDisabled={!taskName.trim() === ''} />
+            <Button color='#8888b9' label='Create To Do' onClick={handleSubmit} isDisabled={!taskName} />
         </form>
         );
     };
