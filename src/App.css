@@ -7,6 +7,7 @@
   min-height: 94vh;
   display: flex;
   background-color:rgb(179, 200, 245);
+  background-image: url(/src/component/pexels-ekaterina-bolovtsova-6193930.jpg);
   
 }
 
@@ -26,7 +27,66 @@ button{
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: auto;
   margin:0 auto 30px auto;
   align-self: center;
+}
+
+form {
+  background-color: #ffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin:0 auto 10px auto;
+  align-self: center;
+  margin-top: 10px;
+}
+
+.todo-input {
+  padding: 10px;
+  width: calc(100% - 100px);
+  font-size: 1em;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-left:5px
+}
+ 
+.user-status select{
+  margin-left:5px;
+  padding:5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+}
+
+li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
+  background-color: #f9f9f9;
+  border:1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1.1em; 
+}
+
+.x-todo {
+  align-self: left;
+  justify-content: center;
+}
+
+ul {
+  background-color: #ffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin:0 auto 10px auto;
+  align-self: center;
+  margin-top: 10px;
+  padding-left:0;
 }

@@ -1,17 +1,22 @@
 import React from "react"
 
-const Button = ({ color='#8888b9', label, onClick, isClicked=false, isDisabled=false}) => {
+const Button = ({ label, onClick, color='#8888b9', isClicked=false, isDisabled=false}) => {
+
+    const backgroundColor = isDisabled ? '#ccc' : isClicked ? "#3558b9" : color;
+    const cursorStyle = isDisabled ? 'not-allowed' : 'pointer';
+
     return (
         <button 
-            style={{ backgroundColor: isClicked ? "#3558b9": color }} 
+            style={{ 
+               backgroundColor,
+               cursor : cursorStyle
+            }} 
             onClick={onClick}
-            isDisabled={isDisabled}
+            disabled={isDisabled}
         >
             {label}
         </button>
     )
 }
 
-export default Button
-   
-
+export default Button;
