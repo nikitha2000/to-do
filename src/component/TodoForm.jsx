@@ -20,7 +20,7 @@
            setTodoText(e.target.value.trim());
         };
 
-        const handleStatusChange = (e) => {
+        const handleTodoStatusChange = (e) => {
           setTodoStatus (e.target.value);
         };
 
@@ -32,7 +32,7 @@
              <input className='todo-input' type='text' placeholder='Enter to do' value={taskName} onChange={handleTodoInputChange} maxLength={maxlength}></input>
               <div className="user-status">
                   <label htmlFor='userstatus'>Todo Status:</label>
-                  <select value={taskStatus} onChange={handleStatusChange}>
+                  <select value={taskStatus} onChange={handleTodoStatusChange}>
                   {taskStatuses.map((status) => (
                           <option key={status} value={status}>
                               {status}
