@@ -30,7 +30,7 @@ const isTodoListButtonClicked = clickedButton == 'todoListButton';
         <div className='app-container'>
           <h1>TODO App</h1>
 
-            <div className='layout-button-container'>
+            <div className='layout-buttons-container'>
                <Button color="#8888b9" label="Todo" onClick={() => {layoutToggleButtonClick("todoButton")}}  isClicked={isTodoButtonClicked}  />
                <Button color="#8888b9" label="Todo list" onClick={() => {layoutToggleButtonClick("todoListButton")}}  isClicked={isTodoListButtonClicked} />
             </div>
