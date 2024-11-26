@@ -8,7 +8,6 @@
   display: flex;
   background-color:rgb(179, 200, 245);
   background-image: url(/src/component/pexels-ekaterina-bolovtsova-6193930.jpg);
-  
 }
 
 button{
@@ -77,6 +76,7 @@ li {
 .x-todo {
   align-self: left;
   justify-content: center;
+  cursor: pointer;
 }
 
 ul {
@@ -90,3 +90,18 @@ ul {
   margin-top: 10px;
   padding-left:0;
 }
+
+.todo {
+  border-left: 3px solid red;
+  padding-left: 10px;
+}
+
+.in-progress {
+  border-left: 3px solid  rgb(250, 225, 3);
+  padding-left: 10px;
+}
+
+.completed {
+  border-left: 3px solid green;
+  padding-left: 10px;
+}            
